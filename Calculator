@@ -1,0 +1,35 @@
+import random
+
+def random_calculator():
+
+    random_or_not = input("Would you like to use random numbers? (y/n)")
+
+    if random_or_not == 'y':
+        num1 = random.randint(0, 10)
+        num2 = random.randint(0, 10)
+    else:
+        num1 = input("Enter the first number")
+        num2 = input("Enter the second number")
+
+    op = input("Enter an operator (+/-/*/:/^)")
+    if op == '+':
+        print("The result of", num1, '+', num2, " is: ", int(num1) + int(num2))
+    elif op == '-':
+        print("The result of", num1, '-', num2, " is: ", int(num1) - int(num2))
+    elif op == '*':
+        print("The result of", num1, '*', num2, " is: ", int(num1) * int(num2))
+    elif op == ':':
+        print("The result of", num1, ':', num2, " is: ", int(num1) / int(num2))
+    elif op == '^':
+        print("The result of", num1, '^', num2, " is: ", int(num1) ** int(num2))
+    else:
+        print("Unsupported operator")
+
+
+random_calculator()
+answer = input("Would you like to run the calculator again? (y/n)")
+
+while answer != 'n':
+    random_calculator()
+    answer = input("Run again? (y/n)")
+
